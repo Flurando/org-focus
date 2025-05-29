@@ -42,7 +42,11 @@ jobs:
           else
             echo config file is absent, using default!
           fi
+
+          echo Current folder is $(pwd)
           ls -al
+          sed -i "s|config.el|$(pwd)/config.el|g;" ./build-site.el
+
           if [ -d content/static ]; then
             mv content/static ./
             make
