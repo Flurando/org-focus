@@ -5,8 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Focused Org Front End</title>
-<meta name="author" content="Flurando" />
+<title>&lrm;</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -192,86 +191,71 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
-
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Focused Org Front End</h1>
-
-<div id="outline-container-org1a6c7b1" class="outline-2">
-<h2 id="org1a6c7b1"><span class="section-number-2">1.</span> Overview</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgda5de28" class="outline-2">
+<h2 id="orgda5de28">org-focus</h2>
+<div class="outline-text-2" id="text-orgda5de28">
 <p>
-This is an <b>example</b> of a <span class="underline">website</span> written with <a href="https://orgmode.org">Org Mode</a>!<br />
+a cleaned up version of gh-org, publish to github while using github workflow to hide unnesassary files.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgacff83f" class="outline-2">
-<h2 id="orgacff83f"><span class="section-number-2">2.</span> So&#x2026;</h2>
-<div class="outline-text-2" id="text-2">
-<div class="org-center">
+<div id="outline-container-org8eac944" class="outline-2">
+<h2 id="org8eac944">aim</h2>
+<div class="outline-text-2" id="text-org8eac944">
 <p>
-centered text<br />
+provide an easy showcase for written org files
 </p>
-</div>
-
-<blockquote>
-<p>
-Should I put some real<br />
-quotes here?<br />
-</p>
-</blockquote>
 
 <p>
-Now Let's try some math<br />
+for example, you have some fan fictions written in org
 </p>
+
+<p>
+mmm, well, that's me to some extent
+</p>
+</div>
 </div>
 
-<div id="outline-container-orgdf2ab4f" class="outline-3">
-<h3 id="orgdf2ab4f"><span class="section-number-3">2.1.</span> <i>Mmm</i>, <del>a square root</del></h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org29e36ec" class="outline-2">
+<h2 id="org29e36ec">usage</h2>
+<div class="outline-text-2" id="text-org29e36ec">
 <p>
-inline \(\sqrt{\lim_{a\to 0} x^a}\)<br />
-well, you indeed have to wait until MathJax is loaded and processed!<br />
+just write your stuff in org here, they will be made html as is
+</p>
+
+<p>
+feel free to tweak the config.el, or just remove it if you would like to use the default one
+</p>
+
+<p>
+to include css, images or similar stuff
+</p>
+
+<p>
+create a folder called static
+</p>
+
+<p>
+everything in it should be in the web folder exactly as is
+</p>
+
+<p>
+might overide the output of your org files if they happen to be the same
+</p>
+
+<p>
+see the workflow file for details
+</p>
+
+<p>
+since the static folder functionality is not tested, if it does not work as intended, open an issue.
 </p>
 </div>
 </div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Flurando</p>
 </div>
 </body>
 </html>
