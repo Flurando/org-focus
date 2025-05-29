@@ -42,7 +42,7 @@ jobs:
           else
             echo config file is absent, using default!
           fi
-          
+          ls -al
           if [ -d content/static ]; then
             mv content/static ./
             make
