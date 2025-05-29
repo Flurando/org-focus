@@ -56,7 +56,10 @@ jobs:
             make
           fi
 
+          ls -al
+
       - name: Deploy to GH Pages
+        working-directory: repo
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
