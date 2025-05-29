@@ -21,8 +21,10 @@ jobs:
         with:
           repository: Flurando/gh-org
           token: ${{ secrets.GITHUB_TOKEN }}
+          path: repo
 
       - name: Remove example content folder
+        working-directory: repo
         run: |
           rm -rf content/
 
@@ -30,15 +32,17 @@ jobs:
         uses: actions/checkout@master
         with:
           persist-credentials: false
-          path: content
+          path: repo/content
 
       - name: Substitute config file if provided
+        working-directory: repo
         run: |
           if [ -f content/config.el ]; then
             mv -f content/config.el config.el
           fi
 
       - name: Build
+        working-directory: repo
         run: |
           if [ -d content/static ]; then
             mv content/static ./
