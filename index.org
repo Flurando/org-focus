@@ -1,0 +1,25 @@
+#+title: Focused Org Front End
+#+author: Flurando
+#+options: \n:t tex:t toc:nil num:t date:nil
+
+* Overview
+
+This is an *example* of a _website_ written with [[https://orgmode.org][Org Mode]]!
+
+* So...
+
+#+begin_center
+centered text
+#+end_center
+
+#+begin_quote
+Should I put some real
+quotes here?
+#+end_quote
+
+Now Let's try some math
+
+** /Mmm/, +a square root+
+
+inline $\sqrt{\lim_{a\to 0} x^a}$
+well, you indeed have to wait until MathJax is loaded and processed!

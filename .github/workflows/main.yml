@@ -1,0 +1,56 @@
+name: Build and Deploy 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Install Dependency
+        run: |
+          sudo apt update
+          sudo apt install emacs
+
+      - name: Checkout source repository
+        uses: actions/checkout@master
+        with:
+          repository: Flurando/gh-org
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove example content folder
+        run: |
+          rm -rf content/
+
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          persist-credentials: false
+          path: content
+
+      - name: Substitute config file if provided
+        run: |
+          if [ -f content/config.el ]; then
+            mv -f content/config.el config.el
+          fi
+
+      - name: Build
+        run: |
+          if [ -d content/static ]; then
+            mv content/static ./
+            make
+            mkdir -p public
+            mv static/* public/
+          else
+            make
+          fi
+
+      - name: Deploy to GH Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
