@@ -38,7 +38,7 @@ jobs:
         run: |
           if [ -f content/config.el ]; then
             echo config file found!
-            ln ./content/config.el ./config.el
+            mv -f ./content/config.el ./config.el
           else
             echo config file is absent, using default!
           fi
