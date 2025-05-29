@@ -16,7 +16,7 @@ jobs:
           sudo apt update
           sudo apt install emacs
 
-      - name: Checkout source repository
+      - name: Checkout template
         uses: actions/checkout@master
         with:
           repository: Flurando/gh-org
@@ -31,14 +31,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          persist-credentials: false
           path: repo/content
 
       - name: Substitute config file if provided
         working-directory: repo
         run: |
           if [ -f content/config.el ]; then
-            mv -f content/config.el config.el
+            echo config file found!
+            ln ./content/config.el ./config.el
+          else
+            echo config file is absent, using default!
           fi
 
       - name: Build
