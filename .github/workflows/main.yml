@@ -48,15 +48,15 @@ jobs:
         run: |
           sed -i "s|config.el|$(pwd)/config.el|g;" ./build-site.el
 
-      - name: sync all static files as is to output folder
-        working-directory: repo
-        run: |
-          rsync -chavzP --exclude="{*~, *#, .*, *.org, config.el}" content/* public/*
-
       - name: Build pages from org files
         working-directory: repo
         run: |
           make
+
+      - name: sync all static files as is to output folder
+        working-directory: repo
+        run: |
+          rsync -chavzP --exclude="{*~, *#, .*, *.org, config.el}" content/* public/*
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
