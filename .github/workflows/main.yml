@@ -14,7 +14,7 @@ jobs:
       - name: Install Dependency
         run: |
           sudo apt update
-          sudo apt install emacs
+          sudo apt install emacs-nox rsync
 
       - name: Checkout template
         uses: actions/checkout@master
@@ -33,7 +33,7 @@ jobs:
         with:
           path: repo/content
 
-      - name: Build
+      - name: Substitute config file if provided
         working-directory: repo
         run: |
           if [ -f content/config.el ]; then
@@ -43,20 +43,20 @@ jobs:
             echo config file is absent, using default!
           fi
 
-          echo Current folder is $(pwd)
-          ls -al
+      - name: Change config.el load path to absolute
+        working-directory: repo
+        run: |
           sed -i "s|config.el|$(pwd)/config.el|g;" ./build-site.el
-          
-          if [ -d content/static ]; then
-            mv content/static ./
-            make
-            mkdir -p public
-            mv static/* public/
-          else
-            make
-          fi
-          
-          ls -al
+
+      - name: sync all static files as is to output folder
+        working-directory: repo
+        run: |
+          rsync -chavzP --exclude='.*' --exclude='*.org' content/* public/*
+
+      - name: Build pages from org files
+        working-directory: repo
+        run: |
+          make
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
