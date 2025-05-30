@@ -56,7 +56,7 @@ jobs:
       - name: sync all static files as is to output folder
         working-directory: repo
         run: |
-          rsync -chavzP --exclude='{"*~", "*#", ".*", "*.org", "config.el"}' content/* public/
+          rsync -chavzP --exclude="*~" --exclude="*#" --exclude=".*" --exclude="*.org" --exclude="config.el" content/* public/
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
