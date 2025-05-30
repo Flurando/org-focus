@@ -1,0 +1,32 @@
+* org-focus
+
+a cleaned up version of gh-org, publish to github while using github workflow to hide unnesassary files.
+
+* aim
+
+provide an easy showcase for written org files
+
+for example, you have some fan fictions written in org
+
+mmm, well, that's me to some extent
+
+* usage
+
+just write your stuff in org here, they will be made html as is
+
+feel free to tweak the config.el, or just remove it if you would like to use the default one
+
+to include css, images or similar stuff
+
+just keep it in the repo as you like
+
+since all files or folders would be copied as is to the github page branch
+
+if they
+
+1. not start with a dot
+2. not end with .org
+
+However, this github action garenteened functionality is *untested*
+
+so if it does not work as I described above, open an issue please.
