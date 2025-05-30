@@ -18,12 +18,15 @@ feel free to tweak the config.el, or just remove it if you would like to use the
 
 to include css, images or similar stuff
 
-create a folder called static
+just keep it in the repo as you like
 
-everything in it should be in the web folder exactly as is
+since all files or folders would be copied as is to the github page branch
 
-might overide the output of your org files if they happen to be the same
+if they
 
-see the workflow file for details
+1. not start with a dot
+2. not end with .org
 
-since the static folder functionality is not tested, if it does not work as intended, open an issue.
+However, this github action garenteened functionality is *untested*
+
+so if it does not work as I described above, open an issue please.
