@@ -51,7 +51,7 @@ jobs:
       - name: sync all static files as is to output folder
         working-directory: repo
         run: |
-          rsync -chavzP --exclude='.*' --exclude='*.org' content/* public/*
+          rsync -chavzP --exclude="{*~, *#, .*, *.org, config.el}" content/* public/*
 
       - name: Build pages from org files
         working-directory: repo
