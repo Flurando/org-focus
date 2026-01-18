@@ -1,6 +1,7 @@
 #+title: Focused Org Front End
 #+author: Flurando
 #+options: \n:t tex:t toc:nil num:t date:nil
+#+html_head: <link rel="stylesheet" type="text/css" href="style.css" />
 
 * Overview
 
