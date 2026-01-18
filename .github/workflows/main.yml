@@ -57,6 +57,7 @@ jobs:
         working-directory: repo
         run: |
           rsync -chavzP --exclude="*~" --exclude="*#" --exclude=".*" --exclude="*.org" --exclude="config.el" content/* public/
+          rm public/README.html
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
